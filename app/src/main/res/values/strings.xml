@@ -1,7 +1,16 @@
-<resources>
-    <string name="app_name">Practica1</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="Typos">Practica1</string>
     <string name="email">Correo Electrónico</string>
     <string name="password">Contraseña</string>
     <string name="repeat_password">Repita su contraseña</string>
     <string name="register">Registrarse</string>
+    <string name="regist">REGISTRO</string>
+    <string name="type">Tipo de documento:</string>
+    <string name="cedula">Cedula</string>
+    <string name="passport">Pasaporte</string>
+    <string name="ti">Tarjeta de identidad</string>
+    <string name="document">Documento</string>
+    <string name="number">Numero de Telefono</string>
+    <string name="logo">LOGO</string>
+    <string name="name">Nombre completo</string>
 </resources>
