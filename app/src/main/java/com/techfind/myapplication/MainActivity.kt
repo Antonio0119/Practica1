@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        Toast.makeText(this,"Cerrando Practica1", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Cerrando Práctica 1", Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             passwordSend = passwordReceived.toString()
         }
 
-        mainBinding.resultTextView.text = "Su correo electronico es: " + emailReceived
+        mainBinding.resultTextView.text = "Su correo electrónico es: " + emailReceived
 
     }
 

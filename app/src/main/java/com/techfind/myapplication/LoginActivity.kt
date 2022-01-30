@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 val password = passwordEditText.text.toString()
 
                 if (email == emailReceived && password == passwordReceived && email.isNotEmpty() && password.isNotEmpty()){
-                    Toast.makeText(this@LoginActivity, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
                     val intent =
                         Intent(this@LoginActivity, MainActivity::class.java)
                     intent.putExtra("email", email)
