@@ -15,4 +15,5 @@
     <string name="name">Nombre completo</string>
     <string name="login">Iniciar sesion</string>
     <string name="not_have_account">No tiene cuenta? Registrarse</string>
+    <string name="sign_out">Cerrar sesion</string>
 </resources>
