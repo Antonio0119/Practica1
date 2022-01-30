@@ -14,10 +14,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/gray"
-        tools:context=".LoginActivity">
+        tools:context=".RegisterActivity">
 
         <TextView
-            android:id="@+id/register_text_view"
+            android:id="@+id/login_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
