@@ -1,5 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="Typos">Practica1</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <string name="email">Correo Electrónico</string>
     <string name="password">Contraseña</string>
     <string name="repeat_password">Repita su contraseña</string>
@@ -15,5 +15,6 @@
     <string name="name">Nombre completo</string>
     <string name="login">Iniciar sesion</string>
     <string name="not_have_account">No tiene cuenta? Registrarse</string>
-    <string name="sign_out">Cerrar sesion</string>
+    <string name="sign_out">sign_out</string>
+
 </resources>
