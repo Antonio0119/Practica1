@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black"
+
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="@android:color/background_light"
+
         tools:context=".RegisterActivity">
 
         <TextView
@@ -23,10 +23,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="43dp"
             android:layout_marginEnd="8dp"
-            android:background="@android:color/background_light"
+
             android:text="@string/regist"
             android:textAlignment="center"
-            android:textColor="@color/black"
+
             android:textSize="30sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name_edit_text"
                 android:layout_width="match_parent"
-                android:background="@color/white"
+
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
                 android:imeOptions="actionNext"
@@ -86,7 +86,7 @@
                 android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+
                 android:hint="@string/email"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -108,7 +108,7 @@
                 android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+
                 android:hint="@string/password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -130,7 +130,7 @@
                 android:id="@+id/repeat_password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+
                 android:hint="@string/repeat_password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -165,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/white"
+
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="@string/cedula" />
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/white"
+
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="@string/passport" />
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="0dp"
-                android:background="@color/white"
+
                 android:paddingStart="0dp"
                 android:paddingEnd="6dp"
                 android:text="@string/ti" />
@@ -209,7 +209,7 @@
                 android:id="@+id/document_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+
                 android:hint="@string/document"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -231,7 +231,7 @@
                 android:id="@+id/number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+
                 android:hint="@string/number"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
