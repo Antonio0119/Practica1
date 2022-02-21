@@ -14,7 +14,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
 
-        tools:context=".RegisterActivity">
+        tools:context=".ui.register.RegisterActivity">
 
         <TextView
             android:id="@+id/login_text_view"

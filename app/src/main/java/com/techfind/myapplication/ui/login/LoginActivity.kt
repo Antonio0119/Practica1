@@ -1,9 +1,11 @@
-package com.techfind.myapplication
+package com.techfind.myapplication.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.techfind.myapplication.ui.main.MainActivity
+import com.techfind.myapplication.ui.register.RegisterActivity
 import com.techfind.myapplication.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -25,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginBinding.notHaveAccountTextView.setOnClickListener {
-            val intent = Intent(this,RegisterActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 

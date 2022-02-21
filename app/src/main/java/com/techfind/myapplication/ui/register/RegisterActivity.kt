@@ -1,4 +1,4 @@
-package com.techfind.myapplication
+package com.techfind.myapplication.ui.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import com.techfind.myapplication.databinding.ActivityRegisterBinding
+import com.techfind.myapplication.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
 

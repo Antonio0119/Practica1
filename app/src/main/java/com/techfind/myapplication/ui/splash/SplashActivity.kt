@@ -1,9 +1,10 @@
-package com.techfind.myapplication
+package com.techfind.myapplication.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.techfind.myapplication.databinding.ActivitySplashBinding
+import com.techfind.myapplication.ui.login.LoginActivity
 import java.util.*
 import kotlin.concurrent.timerTask
 

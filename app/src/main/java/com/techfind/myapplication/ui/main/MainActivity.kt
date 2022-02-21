@@ -1,13 +1,14 @@
-package com.techfind.myapplication
+package com.techfind.myapplication.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.ActivityMainBinding
+import com.techfind.myapplication.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToLoginActivity(){
-        val intent = Intent(this,LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         intent.putExtra("email", emailSend)
         intent.putExtra("password", passwordSend)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
