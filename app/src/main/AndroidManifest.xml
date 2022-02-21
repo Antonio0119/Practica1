@@ -3,6 +3,7 @@
     package="com.techfind.myapplication">
 
     <application
+        android:name=".Techfind"
         android:allowBackup="true"
         android:icon="@mipmap/logo_launcher"
         android:label="@string/app_name"
