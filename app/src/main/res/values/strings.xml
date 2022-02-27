@@ -16,4 +16,10 @@
     <string name="login">Iniciar sesion</string>
     <string name="not_have_account">No tiene cuenta? Registrarse</string>
     <string name="sign_out">Cerrar sesion</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_categories">Categorías</string>
+    <string name="title_services">Mis servicios</string>
+    <string name="title_schedule">Agenda</string>
+    <string name="AddButton" />
+    <string name="ServiceTextView">Añadir servicio</string>
 </resources>
