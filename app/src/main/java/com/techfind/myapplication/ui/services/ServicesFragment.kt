@@ -6,27 +6,53 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.techfind.myapplication.R
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.techfind.myapplication.local.Add_service
+import com.techfind.myapplication.databinding.ServicesFragmentBinding
 
 class ServicesFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ServicesFragment()
-    }
+    private lateinit var servicesBinding: ServicesFragmentBinding
+    private lateinit var servicesViewModel: ServicesViewModel
+    private lateinit var servicesAdapter: ServicesAdapter
+    private var servicesList: ArrayList<Add_service> = ArrayList()
 
-    private lateinit var viewModel: ServicesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.services_fragment, container, false)
+    ): View {
+        servicesBinding = ServicesFragmentBinding.inflate(inflater, container, false)
+        servicesViewModel = ViewModelProvider(this)[ServicesViewModel::class.java]
+        return servicesBinding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ServicesViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        servicesViewModel.loadServicesDone.observe(viewLifecycleOwner, {result->
+            onLoadServicesDoneSubscribe(result)
+        })
+
+        servicesViewModel.loadServices()
+
+        servicesAdapter = ServicesAdapter(servicesList)
+
+        servicesBinding.booksRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this@ServicesFragment.requireContext())
+            adapter = servicesAdapter
+            setHasFixedSize(false)
+        }
+
+        servicesBinding.newButton.setOnClickListener {
+            findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToAddServiceFragment())
+        }
+    }
+
+    private fun onLoadServicesDoneSubscribe(servicesListLoaded: ArrayList<Add_service>) {
+        servicesList = servicesListLoaded
+        servicesAdapter.appendItems(servicesList)
     }
 
 }

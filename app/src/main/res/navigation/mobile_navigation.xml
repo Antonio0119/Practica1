@@ -14,10 +14,22 @@
         android:id="@+id/servicesFragment"
         android:name="com.techfind.myapplication.ui.services.ServicesFragment"
         android:label="@string/title_services"
-        tools:layout="@layout/services_fragment" />
+        tools:layout="@layout/services_fragment" >
+        <action
+            android:id="@+id/action_servicesFragment_to_addServiceFragment"
+            app:destination="@id/addServiceFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.techfind.myapplication.ui.bottom.ui.notifications.NotificationsFragment"
         android:label="@string/title_schedule"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/addServiceFragment"
+        android:name="com.techfind.myapplication.ui.addservices.AddServiceFragment"
+        android:label="AddServiceFragment" >
+        <action
+            android:id="@+id/action_addServiceFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+    </fragment>
 </navigation>
