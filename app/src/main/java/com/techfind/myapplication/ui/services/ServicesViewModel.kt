@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class ServicesViewModel : ViewModel() {
     // TODO: Implement the ViewModel
-    val servicesRepository = ServiceRepository()
+    private val servicesRepository = ServiceRepository()
 
     private val loadServices : MutableLiveData<ArrayList<Add_service>> = MutableLiveData()
     val loadServicesDone: LiveData<ArrayList<Add_service>> = loadServices

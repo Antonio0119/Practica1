@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="Typos">Practica1</string>
+    <string name="app_name" tools:ignore="Typos">TechFind</string>
     <string name="email">Correo Electrónico</string>
     <string name="password">Contraseña</string>
     <string name="repeat_password">Repita su contraseña</string>
@@ -16,5 +16,19 @@
     <string name="login">Iniciar sesion</string>
     <string name="not_have_account">No tiene cuenta? Registrarse</string>
     <string name="sign_out">Cerrar sesion</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_categories">Categorías</string>
+    <string name="title_services">Mis servicios</string>
+    <string name="title_schedule">Agenda</string>
+    <string name="AddButton" />
+    <string name="ServiceTextView">Añadir servicio</string>
+    <string name="category">Categoría:</string>
+    <string name="long_description">Descripción detallada:</string>
+    <string name="short_description">Breve descripción:</string>
+    <string name="service_price">Precio del servicio:</string>
+    <string name="years_experience">Años de experiencia::</string>
+    <string name="save">Guardar</string>
+    <string name="example_category">Limpieza</string>
+    <string name="example_short_description">Más de 10 años de experiencia en el sector de la limpieza, estoy dispuesto a ofrecer mis servicios</string>
 
 </resources>

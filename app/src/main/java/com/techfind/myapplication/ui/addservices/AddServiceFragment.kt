@@ -40,13 +40,13 @@ class AddServiceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        addServiceViewModel.msgDone.observe(viewLifecycleOwner, { result ->
+        addServiceViewModel.msgDone.observe(viewLifecycleOwner) { result ->
             onMsgDoneSubscribe(result)
-        })
+        }
 
-        addServiceViewModel.dataValidated.observe(viewLifecycleOwner, { result ->
+        addServiceViewModel.dataValidated.observe(viewLifecycleOwner) { result ->
             onDataValidatedSubscribe(result)
-        })
+        }
 
         with(addServiceBinding) {
             saveButton.setOnClickListener {

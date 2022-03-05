@@ -31,9 +31,9 @@ class ServicesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        servicesViewModel.loadServicesDone.observe(viewLifecycleOwner, {result->
+        servicesViewModel.loadServicesDone.observe(viewLifecycleOwner) { result ->
             onLoadServicesDoneSubscribe(result)
-        })
+        }
 
         servicesViewModel.loadServices()
 

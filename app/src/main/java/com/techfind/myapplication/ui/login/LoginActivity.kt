@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.techfind.myapplication.ui.main.MainActivity
 import com.techfind.myapplication.ui.register.RegisterActivity
 import com.techfind.myapplication.databinding.ActivityLoginBinding
+import com.techfind.myapplication.ui.bottom.BottomActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -40,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                 if (email == emailReceived && password == passwordReceived && email.isNotEmpty() && password.isNotEmpty()){
                     Toast.makeText(this@LoginActivity, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
                     val intent =
-                        Intent(this@LoginActivity, MainActivity::class.java)
+                        Intent(this@LoginActivity, BottomActivity::class.java)
                     intent.putExtra("email", email)
                     intent.putExtra("password", password)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
