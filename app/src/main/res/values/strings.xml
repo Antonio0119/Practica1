@@ -20,9 +20,16 @@
     <string name="title_categories">Categorías</string>
     <string name="title_services">Mis servicios</string>
     <string name="title_schedule">Agenda</string>
+    <string name="title_profile">Perfil</string>
     <string name="AddButton" />
     <string name="ServiceTextView">Añadir servicio</string>
+    <string name="ProfileTextView">Editar Perfil</string>
     <string name="category">Categoría:</string>
+    <string name="editname">Editar Nombre</string>
+    <string name="editemail">Editar Correo</string>
+    <string name="editpassword">Editar Contraseña</string>
+    <string name="editdocument">Editar Documento</string>
+    <string name="editnumber">Editar Número de teléfono</string>
     <string name="long_description">Descripción detallada:</string>
     <string name="short_description">Breve descripción:</string>
     <string name="service_price">Precio del servicio:</string>

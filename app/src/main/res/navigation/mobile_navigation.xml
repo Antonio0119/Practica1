@@ -24,6 +24,12 @@
         android:name="com.techfind.myapplication.ui.bottom.ui.notifications.NotificationsFragment"
         android:label="@string/title_schedule"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.techfind.myapplication.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/profile_fragment" />
     <fragment
         android:id="@+id/addServiceFragment"
         android:name="com.techfind.myapplication.ui.addservices.AddServiceFragment"
