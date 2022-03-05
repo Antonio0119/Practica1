@@ -9,6 +9,7 @@ import com.techfind.myapplication.databinding.CardViewItemServiceBinding
 import com.techfind.myapplication.local.Add_service
 
 class ServicesAdapter(
+    /*Prueba de clase subida*/
     private val servicesList: ArrayList<Add_service>
 ) : RecyclerView.Adapter<ServicesAdapter.ServiceViewHolder>() {
 
