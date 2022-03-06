@@ -29,4 +29,9 @@ class TechfindRepository {
         userDAO.newUser(user)
     }
 
+    fun searchUser(email: String):User{
+        val userDao: UserDAO = Techfind.database.UserDAO()
+        val user = userDao.searchUser(email)
+        return user
+    }
 }

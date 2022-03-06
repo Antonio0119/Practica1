@@ -18,9 +18,6 @@ class RegisterViewModel: ViewModel() {
     val msgDone: LiveData<String> = msg
     private val status: MutableLiveData<Int> = MutableLiveData()
     val statusDone: LiveData<Int> = status
-    private var userList: ArrayList<User> = ArrayList()
-    private val userListM: MutableLiveData<ArrayList<User>> = MutableLiveData()
-    val userListDone: LiveData<ArrayList<User>> = userListM
     private val userRepository = TechfindRepository()
 
 
@@ -30,7 +27,6 @@ class RegisterViewModel: ViewModel() {
 
     fun Validation(name: String, email: String, password: String, repeatPassword: String, document: String, number: String)
     {
-        Log.d("userlist",userList.toString())
         status.value = 0
         if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()
             && repeatPassword.isNotEmpty() && document.isNotEmpty() && number.isNotEmpty()
