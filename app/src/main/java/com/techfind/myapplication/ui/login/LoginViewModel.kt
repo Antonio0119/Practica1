@@ -25,6 +25,7 @@ class LoginViewModel: ViewModel() {
             if (user.password == password) {
                 msg.value = "Inicio sesion"
                 status.value = 1
+                emailActive.value = email
             } else {
                 msg.value = "Usuario o Contraseña incorrecta"
                 status.value = 0
