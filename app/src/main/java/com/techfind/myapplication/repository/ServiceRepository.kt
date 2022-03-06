@@ -34,10 +34,14 @@ class ServiceRepository {
         return servicesList
     }
 
-    /*
-    suspend fun searchService(category: String): Service {
+    suspend fun searchService(category: String): Add_service {
         val serviceDao: Add_serviceDAO = Techfind.database.Add_serviceDAO()
         val service = serviceDao.searchService(category)
         return service
-    }*/
+    }
+
+    suspend fun deleteService(service: Add_service) {
+        val serviceDao: Add_serviceDAO = Techfind.database.Add_serviceDAO()
+        serviceDao.deleteService(service)
+    }
 }

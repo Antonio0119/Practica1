@@ -48,6 +48,10 @@ class ServicesFragment : Fragment() {
         servicesBinding.newButton.setOnClickListener {
             findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToAddServiceFragment())
         }
+
+        servicesBinding.deleteButton.setOnClickListener {
+            findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToDeleteFragment())
+        }
     }
 
     private fun onLoadServicesDoneSubscribe(servicesListLoaded: ArrayList<Add_service>) {

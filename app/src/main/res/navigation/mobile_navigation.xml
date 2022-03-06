@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_servicesFragment_to_addServiceFragment"
             app:destination="@id/addServiceFragment" />
+        <action
+            android:id="@+id/action_servicesFragment_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_notifications"
@@ -36,6 +39,15 @@
         android:label="AddServiceFragment" >
         <action
             android:id="@+id/action_addServiceFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.techfind.myapplication.ui.delete.DeleteFragment"
+        android:label="delete_fragment"
+        tools:layout="@layout/delete_fragment" >
+        <action
+            android:id="@+id/action_deleteFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
     </fragment>
 </navigation>
