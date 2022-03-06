@@ -10,29 +10,7 @@
         <entry key="..\:/Users/Home/AndroidStudioProjects/Practica1/app/src/main/res/layout/activity_register.xml" value="0.16058763931104356" />
         <entry key="..\:/Users/Home/AndroidStudioProjects/Practica1/app/src/main/res/layout/activity_splash.xml" value="0.16058763931104356" />
         <entry key="..\:/Users/Home/AndroidStudioProjects/Practica1/app/src/main/res/menu/menu_overflow.xml" value="0.28055555555555556" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/drawable/ic_baseline_category_24.xml" value="0.124" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.2595" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/activity_bottom.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/add_service_fragment.xml" value="0.264" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/layout/services_fragment.xml" value="0.176" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/TechFind/app/src/main/res/menu/menu_overflow.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.118" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/activity_bottom.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/activity_register.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/add_service_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/card_view_item_service.xml" value="0.25" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/profile_fragment.xml" value="0.18" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/layout/services_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica/app/src/main/res/menu/menu_overflow.xml" value="0.2" />
+        <entry key="..\:/Users/Julian/AndroidStudioProjects/TechFind/app/src/main/res/layout/profile_fragment.xml" value="0.1796875" />
         <entry key="..\:/Users/arist/Desktop/Practica1_Ult/app/src/main/res/layout/activity_register.xml" value="0.3224181360201511" />
       </map>
     </option>

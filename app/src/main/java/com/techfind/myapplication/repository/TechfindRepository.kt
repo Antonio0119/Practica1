@@ -7,10 +7,10 @@ import java.sql.Types.NULL
 
 class TechfindRepository {
 
-    suspend fun newUser(
+    fun newUser(
         name: String,
         email: String,
-        password: Int,
+        password: String,
         document: Int,
         cel_number: Int
 
@@ -28,4 +28,5 @@ class TechfindRepository {
         val userDAO: UserDAO = Techfind.database.UserDAO()
         userDAO.newUser(user)
     }
+
 }

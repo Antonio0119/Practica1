@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.ActivityMainBinding
 import com.techfind.myapplication.ui.login.LoginActivity
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
     private lateinit var emailSend: String
     private lateinit var passwordSend: String
+
 
     override fun onBackPressed() {
         super.onBackPressed()

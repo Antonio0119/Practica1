@@ -17,7 +17,8 @@ class Techfind : Application() {
             this,
             TechfindDatabase::class.java,
             "techfind_db"
-        ).build()
+        ).allowMainThreadQueries()
+            .build()
     }
 
 }
