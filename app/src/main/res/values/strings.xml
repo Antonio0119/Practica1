@@ -35,6 +35,12 @@
     <string name="service_price">Precio del servicio:</string>
     <string name="years_experience">Años de experiencia::</string>
     <string name="save">Guardar</string>
+    <string name="search">Buscar</string>
     <string name="example_category">Limpieza</string>
+    <string name="warning_title">Advertencia</string>
+    <string name="delete_service_msg">¿Desea eliminar el servicio %s?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="update">Actualizar</string>
     <string name="example_short_description">Más de 10 años de experiencia en el sector de la limpieza, estoy dispuesto a ofrecer mis servicios</string>
 </resources>

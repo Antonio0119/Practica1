@@ -1,8 +1,6 @@
 package com.techfind.myapplication.local
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface Add_serviceDAO {
@@ -12,7 +10,9 @@ interface Add_serviceDAO {
     @Query("SELECT * FROM table_add_service")
     suspend fun loadServices(): MutableList<Add_service>
 
-    /*
-    @Query("SELECT * FROM table_service WHERE Category LIKE :category")
-    suspend fun searchService(category: String): Add_service*/
+    @Query("SELECT * FROM table_add_service WHERE Category LIKE :category")
+    suspend fun searchService(category: String): Add_service
+
+    @Delete
+    suspend fun deleteService(service: Add_service)
 }
