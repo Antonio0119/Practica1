@@ -10,7 +10,7 @@ interface Add_serviceDAO {
     @Query("SELECT * FROM table_add_service")
     suspend fun loadServices(): MutableList<Add_service>
 
-    @Query("SELECT * FROM table_add_service WHERE Category LIKE :category")
+    @Query("SELECT * FROM table_add_service WHERE category LIKE :category")
     suspend fun searchService(category: String): Add_service
 
     @Delete

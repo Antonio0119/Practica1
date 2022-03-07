@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/addServiceFragment"
         android:name="com.techfind.myapplication.ui.addservices.AddServiceFragment"
-        android:label="AddServiceFragment" >
+        android:label="@string/title_addservices" >
         <action
             android:id="@+id/action_addServiceFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/deleteFragment"
         android:name="com.techfind.myapplication.ui.delete.DeleteFragment"
-        android:label="delete_fragment"
+        android:label="@string/title_deleteservice"
         tools:layout="@layout/delete_fragment" >
         <action
             android:id="@+id/action_deleteFragment_to_servicesFragment"

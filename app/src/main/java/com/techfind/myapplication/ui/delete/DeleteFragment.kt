@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.DeleteFragmentBinding
@@ -41,18 +42,23 @@ class DeleteFragment : Fragment() {
         }
     }
 
-    private fun onFindServiceDoneSubscribe(service: Add_service) {
-        MaterialAlertDialogBuilder(requireContext())
-            .setTitle(resources.getString(R.string.warning_title))
-            .setMessage(resources.getString(R.string.delete_service_msg, service.category))
-            .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
-                // Respond to negative button press
-            }
-            .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
-                deleteViewModel.deleteService(service)
-                deleteBinding.categoryEditText.text?.clear()
-            }
-            .show()
+    private fun onFindServiceDoneSubscribe(service: Add_service?) {
+        if (service == null) {
+            Toast.makeText(requireContext(), "Servicio no encontrado", Toast.LENGTH_SHORT).show()
+        } else {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(resources.getString(R.string.warning_title))
+                .setMessage(resources.getString(R.string.delete_service_msg, service.category))
+                .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
+                    // Respond to negative button press
+                }
+                .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                    deleteViewModel.deleteService(service)
+                    deleteBinding.categoryEditText.text?.clear()
+                }
+                .show()
+        }
+
     }
 
 }
