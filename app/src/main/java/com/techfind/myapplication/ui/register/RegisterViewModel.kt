@@ -8,8 +8,12 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.techfind.myapplication.local.User
 import com.techfind.myapplication.repository.TechfindRepository
+import com.techfind.myapplication.ui.bottom.BottomActivity
 import com.techfind.myapplication.ui.login.LoginActivity
 import java.sql.Types.NULL
 
@@ -19,6 +23,7 @@ class RegisterViewModel: ViewModel() {
     private val status: MutableLiveData<Int> = MutableLiveData()
     val statusDone: LiveData<Int> = status
     private val userRepository = TechfindRepository()
+    private lateinit var auth: FirebaseAuth
 
 
     fun emailValidation(email: String): Boolean {
@@ -37,6 +42,7 @@ class RegisterViewModel: ViewModel() {
 
                     // Si la validación es true se indica un registro exitoso
                     if (emailValidation(email)) {
+
                         msg.value = "Registro exitoso"
                         Log.d("myTag", "Reg ex");
                         status.value = 1
@@ -73,6 +79,17 @@ class RegisterViewModel: ViewModel() {
         userRepository.newUser(name,email,password,document,number)
         Log.d("newuser",name)
     }
+
+   /* private fun createUser(user_id: String?, email: String) {
+        val db = Firebase.firestore
+        val user = User(user_id = user_id, email = email, role = Role.VENDEDOR)
+        user_id?.let { user_id->
+            db.collection("users").document(user_id).set(user)
+                .addOnSuccessListener {
+                    Toast.makeText(baseContext,"Usuario creado exitosamente", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }*/
 
 }
 

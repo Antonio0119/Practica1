@@ -10,6 +10,9 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.techfind.myapplication.databinding.ProfileFragmentBinding
 import com.techfind.myapplication.local.User
 import com.techfind.myapplication.ui.addservices.AddServiceFragmentDirections
@@ -21,6 +24,7 @@ class ProfileFragment : Fragment() {
     private lateinit var profileBinding: ProfileFragmentBinding
     private lateinit var profileViewModel: ProfileViewModel
     private lateinit var user: User
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +38,9 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        auth = Firebase.auth
         profileBinding.logoutButton.setOnClickListener {
+            auth.signOut()
             goToLoginActivity()
 
         }
