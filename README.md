@@ -1,4 +1,4 @@
-# Practica 1 Actividades
+# Techfind
 
-Práctica #1 del curso de Programación de Dispositivos Móviles de la Universidad de Antioquia
+Proyecto final para el curso de Programación de Dispositivos Móviles de la Universidad de Antioquia
 2022
