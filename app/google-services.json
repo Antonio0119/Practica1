@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "109344152350",
+    "project_id": "techfind-1ea2e",
+    "storage_bucket": "techfind-1ea2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109344152350:android:a08950da55d862a72e870f",
+        "android_client_info": {
+          "package_name": "com.techfind.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109344152350-qf9u2hlbae7r21lgdj80tl858p6q6fn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxRi8V7oC_fOXp8nTp1keMfCiiZ4HNZRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109344152350-qf9u2hlbae7r21lgdj80tl858p6q6fn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
