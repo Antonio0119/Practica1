@@ -8,15 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.techfind.myapplication.local.Add_service
 import com.techfind.myapplication.databinding.ServicesFragmentBinding
+import com.techfind.myapplication.server.ServiceServer
 
 class ServicesFragment : Fragment() {
 
     private lateinit var servicesBinding: ServicesFragmentBinding
     private lateinit var servicesViewModel: ServicesViewModel
     private lateinit var servicesAdapter: ServicesAdapter
-    private var servicesList: ArrayList<Add_service> = ArrayList()
+    private var servicesListFromServer: ArrayList<ServiceServer> = ArrayList()    //firebase
 
 
     override fun onCreateView(
@@ -31,13 +31,14 @@ class ServicesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        servicesViewModel.loadServicesDone.observe(viewLifecycleOwner, {result->
-            onLoadServicesDoneSubscribe(result)
-        })
+        servicesViewModel.loadServicesFromServerDone.observe(viewLifecycleOwner) {result->
+            onLoadServicesFromServerDoneSubscribe(result)
+        }
 
-        servicesViewModel.loadServices()
 
-        servicesAdapter = ServicesAdapter(servicesList)
+        servicesViewModel.loadServicesFromServer()
+
+        servicesAdapter = ServicesAdapter(servicesListFromServer)
 
         servicesBinding.booksRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@ServicesFragment.requireContext())
@@ -54,9 +55,11 @@ class ServicesFragment : Fragment() {
         }
     }
 
-    private fun onLoadServicesDoneSubscribe(servicesListLoaded: ArrayList<Add_service>) {
-        servicesList = servicesListLoaded
-        servicesAdapter.appendItems(servicesList)
+
+    private fun onLoadServicesFromServerDoneSubscribe(serviceListFromServerLoaded: ArrayList<ServiceServer>) {
+        servicesListFromServer = serviceListFromServerLoaded
+        servicesAdapter.appendItems(servicesListFromServer)
     }
+
 
 }
