@@ -57,20 +57,29 @@ class AddServiceFragment : Fragment() {
                     servicePriceEditText.text.toString(),
                     yearsExperienceEditText.text.toString()
                 )
-                findNavController().navigate(AddServiceFragmentDirections.actionAddServiceFragmentToServicesFragment())
             }
         }
     }
 
     private fun onDataValidatedSubscribe(result: Boolean?) {
-        with(addServiceBinding) {
-            val category = categoryEditText.text.toString()
-            val longDescription = longDescriptionEditText.text.toString()
-            val shortDescription = shortDescriptionEditText.text.toString()
-            val servicePrice = servicePriceEditText.text.toString().toInt()
-            val yearsExperience = yearsExperienceEditText.text.toString().toInt()
+        if (result == true) {
+            with(addServiceBinding) {
+                val category = categoryEditText.text.toString()
+                val longDescription = longDescriptionEditText.text.toString()
+                val shortDescription = shortDescriptionEditText.text.toString()
+                val servicePrice = servicePriceEditText.text.toString().toInt()
+                val yearsExperience = yearsExperienceEditText.text.toString().toInt()
 
-            addServiceViewModel.saveService(category, longDescription, shortDescription, servicePrice, yearsExperience)
+                addServiceViewModel.saveServiceInServer(
+                    category,
+                    shortDescription,
+                    longDescription,
+                    yearsExperience,
+                    servicePrice
+                )
+                findNavController().navigate(AddServiceFragmentDirections.actionAddServiceFragmentToServicesFragment())
+
+            }
         }
     }
 

@@ -4,8 +4,10 @@ import java.io.Serializable
 
 data class ServiceServer (
     var id: String? = null,
+    var user_id: String? = null,
     var category: String? = null,
-    var description: String? = null,
+    var short_description: String? = null,
+    var long_description: String? = null,
     var experience: Int? = null,
     var price: Int? = null,
     var score: Int? = null,
