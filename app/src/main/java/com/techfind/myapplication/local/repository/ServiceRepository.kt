@@ -1,4 +1,4 @@
-package com.techfind.myapplication.repository
+package com.techfind.myapplication.local.repository
 
 import com.techfind.myapplication.Techfind
 import com.techfind.myapplication.local.Add_service

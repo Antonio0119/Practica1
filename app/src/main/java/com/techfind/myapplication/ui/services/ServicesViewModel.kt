@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.techfind.myapplication.local.Add_service
-import com.techfind.myapplication.repository.ServiceRepository
+import com.techfind.myapplication.local.repository.ServiceRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

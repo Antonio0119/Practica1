@@ -3,7 +3,7 @@ package com.techfind.myapplication.ui.addservices
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.techfind.myapplication.repository.ServiceRepository
+import com.techfind.myapplication.local.repository.ServiceRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
