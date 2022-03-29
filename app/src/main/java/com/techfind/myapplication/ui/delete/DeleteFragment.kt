@@ -12,6 +12,7 @@ import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.DeleteFragmentBinding
 import com.techfind.myapplication.local.Add_service
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.techfind.myapplication.server.ServiceServer
 import com.techfind.myapplication.ui.addservices.AddServiceFragmentDirections
 
 class DeleteFragment : Fragment() {
@@ -31,14 +32,33 @@ class DeleteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        deleteViewModel.findServiceDone.observe(viewLifecycleOwner, {result ->
-            onFindServiceDoneSubscribe(result)
-        })
+        deleteViewModel.findServiceServerDone.observe(viewLifecycleOwner) { result ->
+            onFindServiceServerDoneSubscribe(result)
+        }
 
         with(deleteBinding) {
             searchButton.setOnClickListener {
                 deleteViewModel.searchService(categoryEditText.text.toString())
             }
+        }
+    }
+
+    private fun onFindServiceServerDoneSubscribe(service: ServiceServer?) {
+        if (service == null) {
+            Toast.makeText(requireContext(), "Servicio no encontrado", Toast.LENGTH_SHORT).show()
+        } else {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Advertencia")
+                .setMessage("¿Desea eliminar el servicio "+service.category.toString())
+                .setNegativeButton("Cancelar") { dialog, which ->
+                    // Respond to negative button press
+                }
+                .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                    deleteViewModel.deleteServiceServer(service)
+                    deleteBinding.categoryEditText.text?.clear()
+                    Toast.makeText(requireContext(), "Servicio eliminado exitosamente", Toast.LENGTH_SHORT).show()
+                }
+                .show()
         }
     }
 

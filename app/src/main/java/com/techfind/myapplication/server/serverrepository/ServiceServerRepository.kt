@@ -12,6 +12,7 @@ import kotlinx.coroutines.withContext
 class ServiceServerRepository {
     val db = Firebase.firestore
     val auth = Firebase.auth
+    val activeUser = auth.currentUser?.uid
 
     suspend fun saveService(
         category: String,
@@ -22,7 +23,6 @@ class ServiceServerRepository {
     ) {
 
         val documentService = db.collection("services").document()
-        val activeUser = auth.currentUser?.uid
         val service = ServiceServer(
             id = documentService.id,
             user_id = activeUser.toString(),
@@ -34,9 +34,8 @@ class ServiceServerRepository {
         )
 
         db.collection("services").document(documentService.id).set(service).await()
-
-        val document = db.collection("users").document(activeUser.toString()).collection("services").document()
-        db.collection("users").document(activeUser.toString()).collection("services").document(document.id).set(service).await()
+        db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id)
+        db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id).set(service).await()
 
     }
 
@@ -46,11 +45,20 @@ class ServiceServerRepository {
         }
     }
 
-    fun deleteservice(service: ServiceServer) {
+    suspend fun deleteservice(service: ServiceServer) {
         service.id?.let { id ->
             db.collection("services")
                 .document(id)
                 .delete()
+                .await()
+
+            db.collection("users")
+                .document(activeUser.toString())
+                .collection("services")
+                .document(id)
+                .delete()
+                .await()
         }
+
     }
 }
