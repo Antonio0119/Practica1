@@ -45,4 +45,13 @@
     <string name="accept">Aceptar</string>
     <string name="update">Actualizar</string>
     <string name="example_short_description">Más de 10 años de experiencia en el sector de la limpieza, estoy dispuesto a ofrecer mis servicios</string>
+    <string name="category_title">Categoria</string>
+    <string name="category_laundry">Lavandería</string>
+    <string name="category_carpentry">Carpintería</string>
+    <string name="category_locksmith">Cerrajería</string>
+    <string name="category_pestcontrol">Control de plagas</string>
+    <string name="category_electrician">Electricista</string>
+    <string name="category_plumbing">Plomería</string>
+    <string name="category_cleaning">Limpieza</string>
+    <string name="category_select">Seleccione una categoría</string>
 </resources>

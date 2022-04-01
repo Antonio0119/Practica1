@@ -45,6 +45,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.9'
     implementation 'com.google.firebase:firebase-analytics-ktx:20.1.1'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
     def room_version = "2.4.2"
 
     implementation "androidx.room:room-runtime:$room_version"
@@ -63,6 +64,8 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
     testImplementation 'junit:junit:4.13.2'
