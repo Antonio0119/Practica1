@@ -9,7 +9,11 @@
         android:id="@+id/categoriesFragment"
         android:name="com.techfind.myapplication.ui.categories.CategoriesFragment"
         android:label="@string/title_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_categoriesListFragment"
+            app:destination="@id/categoriesListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/servicesFragment"
         android:name="com.techfind.myapplication.ui.services.ServicesFragment"
@@ -49,5 +53,14 @@
         <action
             android:id="@+id/action_deleteFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesListFragment"
+        android:name="com.techfind.myapplication.ui.categorieslist.CategoriesListFragment"
+        android:label="categorieslist_fragment"
+        tools:layout="@layout/categorieslist_fragment" >
+        <argument
+            android:name="category"
+            app:argType="string" />
     </fragment>
 </navigation>

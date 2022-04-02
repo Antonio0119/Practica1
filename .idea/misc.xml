@@ -33,12 +33,13 @@
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/add_service_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/card_view_item_service.xml" value="0.2" />
+        <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/card_view_item_service.xml" value="0.33" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/delete_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/fragment_categories.xml" value="0.18306351183063513" />
+        <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/fragment_categories.xml" value="0.22" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/profile_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/prueba_fragment.xml" value="0.2" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/layout/services_fragment.xml" value="0.2" />
         <entry key="..\:/Users/arist/Desktop/Practica2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
       </map>

@@ -26,6 +26,7 @@ class ServicesAdapter(
         holder.bind(service)
     }
 
+
     override fun getItemCount(): Int = servicesList.size
 
     fun appendItems(newList: ArrayList<ServiceServer>) {

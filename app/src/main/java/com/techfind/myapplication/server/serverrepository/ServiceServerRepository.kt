@@ -33,6 +33,7 @@ class ServiceServerRepository {
             price = price,
         )
 
+        db.collection("services").whereEqualTo("category", "Carpinteria")
         db.collection("services").document(documentService.id).set(service).await()
         db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id)
         db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id).set(service).await()
