@@ -22,11 +22,6 @@
             android:id="@+id/action_servicesFragment_to_deleteFragment"
             app:destination="@id/deleteFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.techfind.myapplication.ui.bottom.ui.notifications.NotificationsFragment"
-        android:label="@string/title_schedule"
-        tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -50,4 +45,9 @@
             android:id="@+id/action_deleteFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.techfind.myapplication.ui.calendar.CalendarFragment"
+        android:label="Agenda"
+        tools:layout="@layout/calendar_fragment" />
 </navigation>

@@ -1,21 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="Typos">Practica 2</string>
+    <string name="app_name" tools:ignore="Typos">TechFind</string>
     <string name="email">Correo Electrónico</string>
     <string name="password">Contraseña</string>
     <string name="repeat_password">Repita su contraseña</string>
     <string name="register">Registrarse</string>
     <string name="regist">REGISTRO</string>
     <string name="type">Tipo de documento:</string>
-    <string name="cedula">Cedula</string>
+    <string name="cedula">Cédula</string>
     <string name="passport">Pasaporte</string>
     <string name="ti">Tarjeta de identidad</string>
     <string name="document">Documento</string>
-    <string name="number">Numero de Telefono</string>
+    <string name="number">Número de Teléfono</string>
     <string name="logo">LOGO</string>
     <string name="name">Nombre completo</string>
-    <string name="login">Iniciar sesion</string>
-    <string name="not_have_account">No tiene cuenta? Registrarse</string>
-    <string name="sign_out">Cerrar sesion</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="not_have_account">¿No tiene cuenta? Registrarse</string>
+    <string name="sign_out">Cerrar sesión</string>
     <string name="title_activity_bottom">BottomActivity</string>
     <string name="title_categories">Categorías</string>
     <string name="title_services">Mis servicios</string>
@@ -45,4 +45,6 @@
     <string name="accept">Aceptar</string>
     <string name="update">Actualizar</string>
     <string name="example_short_description">Más de 10 años de experiencia en el sector de la limpieza, estoy dispuesto a ofrecer mis servicios</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
