@@ -6,6 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.techfind.myapplication.local.repository.TechfindRepository
+import com.techfind.myapplication.server.serverrepository.UserServerRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class RegisterViewModel: ViewModel() {
@@ -34,6 +38,7 @@ class RegisterViewModel: ViewModel() {
                     if (emailValidation(email)) {
 
                         status.value = 1
+                        msg.value = "Registro exitoso"
 
                     } else {
                         //Si el email es invalido
@@ -51,6 +56,18 @@ class RegisterViewModel: ViewModel() {
             // si no digita todos los campos
             msg.value = "Debe digitar todos los campos"
         }
+    }
+
+    fun saveUserInServer(name: String,email: String,password: String,document: Int,cel_number: Int) {
+        GlobalScope.launch(Dispatchers.IO) {
+            UserServerRepository().saveUser(
+                name = name,
+                email = email,
+                password = password,
+                document = document,
+                cel_number = cel_number)
+        }
+
     }
 
     fun saveUser(

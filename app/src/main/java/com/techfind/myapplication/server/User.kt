@@ -9,8 +9,3 @@ data class User(
     var cel_number: Int? = null
 )
 
-enum class Role {
-    VENDEDOR, COMPRADOR, AMBOS
-}
-
-

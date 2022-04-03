@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.techfind.myapplication.databinding.ActivityRegisterBinding
 
@@ -47,43 +46,34 @@ class RegisterActivity : AppCompatActivity() {
                 val number = numberEditText.text.toString()
                 registerViewModel.validation(name,email,password,repeatPassword,document,number)
                 if (statusO == 1){
-                    auth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d("Register", "createUserWithEmail:success")
-                                createUser(auth.currentUser?.uid, email,name,document.toInt(),password,number.toInt())
-                                onBackPressed()
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w("Register", "createUserWithEmail:failure", task.exception)
-                                Toast.makeText(
-                                    baseContext, task.exception?.message.toString(),
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                    if(auth.currentUser == null) {
+                        auth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    registerViewModel.saveUserInServer(
+                                        email = email,
+                                        name = name,
+                                        password = password,
+                                        document = document.toInt(),
+                                        cel_number = number.toInt()
+                                    )
+                                    auth.signOut()
+                                    onBackPressed()
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.d("Register", "createUserWithEmail:failure")
+                                    Toast.makeText(
+                                        baseContext, task.exception?.message.toString(),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
                             }
-                        }
-                   // val intent =
-                       // Intent(this@RegisterActivity, LoginActivity::class.java)
-                   // startActivity(intent)
-                    registerViewModel.saveUser(name,email,password, document.toInt(),number.toInt())
+                    }
                 }
             }
         }
     }
 
-    private fun createUser(uid: String?, email: String, name: String, document: Int, password: String, cel_number: Int) {
-        val db = Firebase.firestore
-        val user = com.techfind.myapplication.server.User(uid = uid, email = email, name = name, document = document, password = password, cel_number = cel_number)
-        uid?.let { uid->
-            db.collection("users").document(uid).set(user)
-                .addOnSuccessListener {
-                    Toast.makeText(
-                        baseContext,
-                        "Usuario creado exitosamente",
-                        Toast.LENGTH_SHORT).show()
-                }
-        }
-    }
+
 
 }
