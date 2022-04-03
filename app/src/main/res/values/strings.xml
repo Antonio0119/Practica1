@@ -59,4 +59,15 @@
     <string name="Paint">Pintura</string>
     <string name="category_paint">Pintura</string>
     <string name="category_mechanic">Mecanico</string>
+    <string-array name="categories_array">
+        <item>Lavanderia</item>
+        <item>Carpinteria</item>
+        <item>Cerrajeria</item>
+        <item>Control de plagas</item>
+        <item>Electricista</item>
+        <item>Plomeria</item>
+        <item>Limpieza</item>
+        <item>Pintura</item>
+        <item>Mecanico</item>
+    </string-array>
 </resources>

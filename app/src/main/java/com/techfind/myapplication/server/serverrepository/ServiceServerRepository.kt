@@ -1,5 +1,6 @@
 package com.techfind.myapplication.server.serverrepository
 
+import android.util.Log
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -32,10 +33,8 @@ class ServiceServerRepository {
             experience = experience,
             price = price,
         )
-
-        db.collection("services").whereEqualTo("category", "Carpinteria")
+        Log.d("User",auth.currentUser?.email.toString())
         db.collection("services").document(documentService.id).set(service).await()
-        db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id)
         db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id).set(service).await()
 
     }
