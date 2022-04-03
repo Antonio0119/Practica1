@@ -12,7 +12,7 @@
         android:title="@string/title_services" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/calendarFragment"
         android:icon="@drawable/ic_baseline_date_range_24"
         android:title="@string/title_schedule" />
 
