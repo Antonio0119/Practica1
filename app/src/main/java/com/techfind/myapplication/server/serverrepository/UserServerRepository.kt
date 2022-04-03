@@ -9,7 +9,6 @@ import kotlinx.coroutines.tasks.await
 class UserServerRepository {
     val db = Firebase.firestore
     val auth = Firebase.auth
-    val activeUser = auth.currentUser?.uid
 
     suspend fun saveUser(
         name: String,

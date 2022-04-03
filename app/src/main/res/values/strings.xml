@@ -56,4 +56,7 @@
     <string name="category_select">Seleccione una categoría</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Paint">Pintura</string>
+    <string name="category_paint">Pintura</string>
+    <string name="category_mechanic">Mecanico</string>
 </resources>

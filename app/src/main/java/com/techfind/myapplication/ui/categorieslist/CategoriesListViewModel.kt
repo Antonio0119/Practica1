@@ -16,25 +16,19 @@ class CategoriesListViewModel : ViewModel() {
 
     private var serviceList: ArrayList<ServiceServer> = ArrayList()
 
-    //private val loadServices : MutableLiveData<ArrayList<Book>> = MutableLiveData()
-   // val loadBooksDone: LiveData<ArrayList<Book>> = loadBooks
-
     private val loadServicesFromServer : MutableLiveData<ArrayList<ServiceServer>> = MutableLiveData()
     val loadServicesFromServerDone: LiveData<ArrayList<ServiceServer>> = loadServicesFromServer
 
-    /*fun loadServices() {
-        GlobalScope.launch(Dispatchers.IO) {
-            loadServices.postValue(bookRepository.loadBooks())
-        }
-    }*/
 
-    fun loadServicesFromServer() {
+    fun loadServicesFromServer(category: String) {
         serviceList.clear()
         GlobalScope.launch(Dispatchers.IO){
             val querySnapshot = serviceServerRepository.loadServices()
             for (document in querySnapshot) {
                 val serviceServer: ServiceServer = document.toObject<ServiceServer>()
-                serviceList.add(serviceServer)
+                if (serviceServer.category.toString() == category) {
+                    serviceList.add(serviceServer)
+                }
             }
             loadServicesFromServer.postValue(serviceList)
         }

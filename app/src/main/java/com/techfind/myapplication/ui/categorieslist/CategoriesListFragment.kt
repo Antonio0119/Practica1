@@ -32,10 +32,7 @@ class CategoriesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //throw RuntimeException("Test Crash") // Force a crash
-      //  pruebaViewModel.loadBooksDone.observe(viewLifecycleOwner) { result ->
-       //     onLoadBooksDoneSubscribe(result)
-       // }
+
 
         categorieslistBinding.pruebaTextView.text = args.category
 
@@ -43,8 +40,7 @@ class CategoriesListFragment : Fragment() {
             onLoadServicesFromServerDoneSubscribe(result)
         }
 
-        //listViewModel.loadBooks()
-        categorieslistViewModel.loadServicesFromServer()
+        categorieslistViewModel.loadServicesFromServer(args.category)
         categorieslistAdapter = CategoriesListAdapter(servicesListFromServer)
 
         categorieslistBinding.servicesRecyclerView.apply {
@@ -56,9 +52,6 @@ class CategoriesListFragment : Fragment() {
 
     }
 
-    /*private fun onServiceItemClicked(service: ServiceServer) {
-        findNavController().navigate(CategoriesFragmentDirections.actionCategoriesFragmentToPruebaFragment(service))
-    }*/
 
     private fun onLoadServicesFromServerDoneSubscribe(servicesListFromServerLoaded: ArrayList<ServiceServer>) { //firebase
         servicesListFromServer = servicesListFromServerLoaded
