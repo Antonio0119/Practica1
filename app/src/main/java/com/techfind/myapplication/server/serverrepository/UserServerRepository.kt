@@ -1,5 +1,6 @@
 package com.techfind.myapplication.server.serverrepository
 
+import android.util.Log
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -34,8 +35,10 @@ class UserServerRepository {
         var phone:String? =""
         db.collection("users").document(id).get().addOnSuccessListener{document->
             if(document.exists()){
+                Log.d("jaja","si existe")
                 phone = document.data?.get("cel_number").toString()
             }
+            else Log.d("jaja","no existe")
         }.await()
         return phone
     }
