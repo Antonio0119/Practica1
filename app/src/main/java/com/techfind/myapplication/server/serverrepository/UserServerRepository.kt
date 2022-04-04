@@ -18,7 +18,6 @@ class UserServerRepository {
         cel_number: Int,
     ) {
 
-
         val documentUser = db.collection("users").document()
         val user = User(
             uid = documentUser.id,

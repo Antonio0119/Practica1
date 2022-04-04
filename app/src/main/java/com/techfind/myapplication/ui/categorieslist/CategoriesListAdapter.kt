@@ -13,9 +13,8 @@ import com.techfind.myapplication.server.ServiceServer
 
 class CategoriesListAdapter(
 
-    private val servicesList: ArrayList<ServiceServer>
-
-   // private val onItemClicked: (ServiceServer) -> Unit
+    private val servicesList: ArrayList<ServiceServer>,
+    private val onItemClicked: (ServiceServer) -> Unit
 ) : RecyclerView.Adapter<CategoriesListAdapter.ServiceViewHolder>() {
 
     //private val servicesList: MutableList<ServiceServer> = mutableListOf()
@@ -28,7 +27,7 @@ class CategoriesListAdapter(
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val service = servicesList[position]
         holder.bind(service)
-       // holder.itemView.setOnClickListener { onItemClicked(servicesList[position]) }
+        holder.itemView.setOnClickListener { onItemClicked(servicesList[position]) }
     }
 
     override fun getItemCount(): Int = servicesList.size
@@ -50,22 +49,6 @@ class CategoriesListAdapter(
                 shortDescriptionTextView.text = service.short_description
 
                 Glide.with(context).load(service.urlPicture).into(pictureServiceImageView)
-                //imagen de prueba
-                //Picasso.get().load("https://res.cloudinary.com/stchi/image/upload/v1609403400/Main/Tide/en_US/HOW_TO_WASH_CLOTES_How_to_do_Laundry_570x310.png").into(pictureServiceImageView)
-
-
-          /*      if(service.category == "Carpinteria"){
-                    categoryTextView.text = service.category
-                    shortDescriptionTextView.text = service.short_description
-                    //     Glide.with(context).load(book.urlPicture).into(pictureBookImageView)
-                    Picasso.get().load("https://res.cloudinary.com/stchi/image/upload/v1609403400/Main/Tide/en_US/HOW_TO_WASH_CLOTES_How_to_do_Laundry_570x310.png").into(pictureServiceImageView)
-
-                } else {
-                    categoryTextView.text = null
-                    shortDescriptionTextView.text = null
-                    //     Glide.with(context).load(book.urlPicture).into(pictureBookImageView)
-                    Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/9/99/White_Background_%28To_id_screen_dust_during_cleanup%29.jpg").into(pictureServiceImageView)
-                }*/
 
             }
         }

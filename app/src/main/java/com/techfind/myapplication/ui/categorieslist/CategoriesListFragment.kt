@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.techfind.myapplication.databinding.CategorieslistFragmentBinding
@@ -35,18 +36,6 @@ class CategoriesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        categorieslistBinding.pruebaTextView.setOnClickListener {
-
-            val i = Intent(Intent.ACTION_VIEW)
-            val url = "https://api.whatsapp.com/send?phone=573044230305"
-            //+ "&text="+URLEncoder.encode("Prueba", "UTF-8")
-            i.setPackage("com.whatsapp")
-            i.setData(Uri.parse(url))
-            startActivity(i)
-
-        }
-
         categorieslistBinding.pruebaTextView.text = args.category
 
         categorieslistViewModel.loadServicesFromServerDone.observe(viewLifecycleOwner) { result ->
@@ -54,7 +43,7 @@ class CategoriesListFragment : Fragment() {
         }
 
         categorieslistViewModel.loadServicesFromServer(args.category)
-        categorieslistAdapter = CategoriesListAdapter(servicesListFromServer)
+        categorieslistAdapter = CategoriesListAdapter(servicesListFromServer, onItemClicked = {onServiceClicked(it)})
 
         categorieslistBinding.servicesRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@CategoriesListFragment.requireContext())
@@ -65,6 +54,14 @@ class CategoriesListFragment : Fragment() {
 
     }
 
+    private fun onServiceClicked(service: ServiceServer) {
+        val i = Intent(Intent.ACTION_VIEW)
+        val url = "https://api.whatsapp.com/send?phone=573044230305"
+        //+ "&text="+URLEncoder.encode("Prueba", "UTF-8")
+        i.setPackage("com.whatsapp")
+        i.setData(Uri.parse(url))
+        startActivity(i)
+    }
 
     private fun onLoadServicesFromServerDoneSubscribe(servicesListFromServerLoaded: ArrayList<ServiceServer>) { //firebase
         servicesListFromServer = servicesListFromServerLoaded
