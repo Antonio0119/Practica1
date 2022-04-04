@@ -45,8 +45,10 @@ class CategoriesListAdapter(
         fun bind(service: ServiceServer) {
             with(binding) {
 
-                categoryTextView.text = service.category
-                shortDescriptionTextView.text = service.short_description
+                categoryTextView.text = "Categoría: ".plus(service.category)
+                priceTextView.text = "Precio: $".plus(service.price.toString())
+                yearsTextView.text = "Años de experiencia: ".plus(service.experience.toString())
+                shortDescriptionTextView.text = "Descripción: ".plus(service.short_description)
 
                 Glide.with(context).load(service.urlPicture).into(pictureServiceImageView)
 
