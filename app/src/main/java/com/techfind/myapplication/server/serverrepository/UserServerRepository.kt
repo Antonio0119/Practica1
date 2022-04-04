@@ -30,4 +30,14 @@ class UserServerRepository {
         db.collection("users").document(documentUser.id).set(user).await()
     }
 
+    suspend fun getUserData(id:String):String?{
+        var phone:String? =""
+        db.collection("users").document(id).get().addOnSuccessListener{document->
+            if(document.exists()){
+                phone = document.data?.get("cel_number").toString()
+            }
+        }.await()
+        return phone
+    }
+
 }

@@ -11,8 +11,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.techfind.myapplication.databinding.CategorieslistFragmentBinding
 import com.techfind.myapplication.server.ServiceServer
+import com.techfind.myapplication.server.serverrepository.UserServerRepository
 
 class CategoriesListFragment : Fragment() {
 
@@ -20,10 +23,10 @@ class CategoriesListFragment : Fragment() {
     private lateinit var categorieslistViewModel: CategoriesListViewModel
     private lateinit var categorieslistAdapter: CategoriesListAdapter
    // private var booksList: ArrayList<Book> = ArrayList()    //room
+    val repo = UserServerRepository()
     private var servicesListFromServer: ArrayList<ServiceServer> = ArrayList()    //firebase
 
     private val args: CategoriesListFragmentArgs by navArgs()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,10 +57,11 @@ class CategoriesListFragment : Fragment() {
 
     }
 
-    private fun onServiceClicked(service: ServiceServer) {
+    suspend fun onServiceClicked(service: ServiceServer) {
+        val phone:String?=repo.getUserData(servicesListFromServer.get(servicesListFromServer.indexOf(service)).user_id.toString())
+        //servicesListFromServer.get(servicesListFromServer.indexOf(service)).user_id
         val i = Intent(Intent.ACTION_VIEW)
-        val url = "https://api.whatsapp.com/send?phone=573044230305"
-        //+ "&text="+URLEncoder.encode("Prueba", "UTF-8")
+        val url = "https://api.whatsapp.com/send?phone=57".plus(phone)
         i.setPackage("com.whatsapp")
         i.setData(Uri.parse(url))
         startActivity(i)
@@ -67,8 +71,6 @@ class CategoriesListFragment : Fragment() {
         servicesListFromServer = servicesListFromServerLoaded
         categorieslistAdapter.appendItems(servicesListFromServer)
     }
-
-
 
 
 }
