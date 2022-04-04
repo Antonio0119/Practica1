@@ -106,13 +106,13 @@ class ProfileFragment : Fragment() {
                     db.collection("users")
                         .document(auth.currentUser?.uid.toString())
                         .update("document"
-                            ,profileBinding.editdocumentEditText.text.toString().toInt())
+                            ,profileBinding.editdocumentEditText.text.toString().toDouble())
                 }
                 if (element == "number"){
                     db.collection("users")
                         .document(auth.currentUser?.uid.toString())
                         .update("cel_number"
-                            ,profileBinding.editnumberEditText.text.toString().toInt())
+                            ,profileBinding.editnumberEditText.text.toString().toDouble())
                 }
             }
         }
