@@ -46,7 +46,7 @@ class CategoriesListFragment : Fragment() {
         }
 
         categorieslistViewModel.loadServicesFromServer(args.category)
-        categorieslistAdapter = CategoriesListAdapter(servicesListFromServer, onItemClicked = {onServiceClicked(it)})
+        //categorieslistAdapter = CategoriesListAdapter(servicesListFromServer, onItemClicked = {onServiceClicked(it)})
 
         categorieslistBinding.servicesRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@CategoriesListFragment.requireContext())
@@ -58,13 +58,13 @@ class CategoriesListFragment : Fragment() {
     }
 
     suspend fun onServiceClicked(service: ServiceServer) {
-        val phone:String?=repo.getUserData(servicesListFromServer.get(servicesListFromServer.indexOf(service)).user_id.toString())
+        /*val phone:String?=repo.getUserData(servicesListFromServer.get(servicesListFromServer.indexOf(service)).user_id.toString())
         //servicesListFromServer.get(servicesListFromServer.indexOf(service)).user_id
         val i = Intent(Intent.ACTION_VIEW)
         val url = "https://api.whatsapp.com/send?phone=57".plus(phone)
         i.setPackage("com.whatsapp")
         i.setData(Uri.parse(url))
-        startActivity(i)
+        startActivity(i)*/
     }
 
     private fun onLoadServicesFromServerDoneSubscribe(servicesListFromServerLoaded: ArrayList<ServiceServer>) { //firebase
