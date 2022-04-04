@@ -1,5 +1,6 @@
 package com.techfind.myapplication.ui.categorieslist
 
+import android.content.pm.PackageManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,6 +34,8 @@ class CategoriesListViewModel : ViewModel() {
             loadServicesFromServer.postValue(serviceList)
         }
     }
+
+
 
 
 }

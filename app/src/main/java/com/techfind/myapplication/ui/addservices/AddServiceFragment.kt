@@ -93,12 +93,28 @@ class AddServiceFragment : Fragment() {
                 val servicePrice = servicePriceEditText.text.toString().toInt()
                 val yearsExperience = yearsExperienceEditText.text.toString().toInt()
 
+                val urlPicture = when (category){
+                    "Plomería" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/plomeria.jpg?alt=media&token=ce29d5d3-218f-4314-afae-ea13eeab2d18"
+                    "Limpieza" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/limpieza.jpg?alt=media&token=0038b60d-6cc4-4bfa-9f62-16a9349d1f3e"
+                    "Cerrajería" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/Cerrajeria.jpg?alt=media&token=8015a024-478d-4150-b232-b654b81cab12"
+                    "Carpintería" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/carpinteria.jpg?alt=media&token=89a04498-c36d-481a-a671-7ec094a3e36c"
+                    "Control plagas" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/control%20plagas.jpg?alt=media&token=8442f097-9538-4d3c-9409-4310ec0a5fcf"
+                    "Electricidad" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/electricidad.jpg?alt=media&token=462ab6d5-d9be-4172-a4fe-90d25fe7d982"
+                    "Lavandería" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/lavanderia.jpg?alt=media&token=19b63b54-f358-455d-9ca2-d4f6bccef777"
+                    "Mecánica" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/mecanica.jpg?alt=media&token=802241d1-bdf9-4cd3-945c-49278bc1a628"
+                    "Pintura" -> "https://firebasestorage.googleapis.com/v0/b/techfind-1ea2e.appspot.com/o/pintura.jpg?alt=media&token=ee9bef58-1822-416a-a2e9-09ef733630dc"
+
+                    else -> {""}
+                }
+
+
                 addServiceViewModel.saveServiceInServer(
                     category,
                     shortDescription,
                     longDescription,
                     yearsExperience,
-                    servicePrice
+                    servicePrice,
+                    urlPicture
                 )
                 findNavController().navigate(AddServiceFragmentDirections.actionAddServiceFragmentToServicesFragment())
 

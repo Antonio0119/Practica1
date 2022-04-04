@@ -21,6 +21,7 @@ class ServiceServerRepository {
         long_description: String,
         experience: Int,
         price: Int,
+        urlPicture: String
     ) {
 
         val documentService = db.collection("services").document()
@@ -32,6 +33,7 @@ class ServiceServerRepository {
             long_description = long_description,
             experience = experience,
             price = price,
+            urlPicture = urlPicture
         )
         Log.d("User",auth.currentUser?.email.toString())
         db.collection("services").document(documentService.id).set(service).await()
