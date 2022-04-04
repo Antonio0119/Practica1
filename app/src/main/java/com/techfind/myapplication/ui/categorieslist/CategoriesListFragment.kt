@@ -1,5 +1,7 @@
 package com.techfind.myapplication.ui.categorieslist
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -33,6 +35,17 @@ class CategoriesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        categorieslistBinding.pruebaTextView.setOnClickListener {
+
+            val i = Intent(Intent.ACTION_VIEW)
+            val url = "https://api.whatsapp.com/send?phone=573044230305"
+            //+ "&text="+URLEncoder.encode("Prueba", "UTF-8")
+            i.setPackage("com.whatsapp")
+            i.setData(Uri.parse(url))
+            startActivity(i)
+
+        }
 
         categorieslistBinding.pruebaTextView.text = args.category
 
