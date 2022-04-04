@@ -11,4 +11,5 @@ data class ServiceServer (
     var experience: Int? = null,
     var price: Int? = null,
     var score: Int? = null,
+    var urlPicture: String? =null,
 ) : Serializable

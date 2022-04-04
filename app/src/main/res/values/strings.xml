@@ -49,8 +49,8 @@
     <string name="category_laundry">Lavandería</string>
     <string name="category_carpentry">Carpintería</string>
     <string name="category_locksmith">Cerrajería</string>
-    <string name="category_pestcontrol">Control de plagas</string>
-    <string name="category_electrician">Electricista</string>
+    <string name="category_pestcontrol">Control plagas</string>
+    <string name="category_electrician">Electricidad</string>
     <string name="category_plumbing">Plomería</string>
     <string name="category_cleaning">Limpieza</string>
     <string name="category_select">Seleccione una categoría</string>
@@ -58,16 +58,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Paint">Pintura</string>
     <string name="category_paint">Pintura</string>
-    <string name="category_mechanic">Mecanico</string>
+    <string name="category_mechanic">Mecánica</string>
     <string-array name="categories_array">
-        <item>Lavanderia</item>
-        <item>Carpinteria</item>
-        <item>Cerrajeria</item>
-        <item>Control de plagas</item>
-        <item>Electricista</item>
-        <item>Plomeria</item>
+        <item>Lavandería</item>
+        <item>Carpintería</item>
+        <item>Cerrajería</item>
+        <item>Control plagas</item>
+        <item>Electricidad</item>
+        <item>Plomería</item>
         <item>Limpieza</item>
         <item>Pintura</item>
-        <item>Mecanico</item>
+        <item>Mecánica</item>
     </string-array>
 </resources>

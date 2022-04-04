@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.CardViewItemServiceBinding
@@ -47,9 +48,10 @@ class CategoriesListAdapter(
 
                 categoryTextView.text = service.category
                 shortDescriptionTextView.text = service.short_description
-                //     Glide.with(context).load(book.urlPicture).into(pictureBookImageView)
+
+                Glide.with(context).load(service.urlPicture).into(pictureServiceImageView)
                 //imagen de prueba
-                Picasso.get().load("https://res.cloudinary.com/stchi/image/upload/v1609403400/Main/Tide/en_US/HOW_TO_WASH_CLOTES_How_to_do_Laundry_570x310.png").into(pictureServiceImageView)
+                //Picasso.get().load("https://res.cloudinary.com/stchi/image/upload/v1609403400/Main/Tide/en_US/HOW_TO_WASH_CLOTES_How_to_do_Laundry_570x310.png").into(pictureServiceImageView)
 
 
           /*      if(service.category == "Carpinteria"){
