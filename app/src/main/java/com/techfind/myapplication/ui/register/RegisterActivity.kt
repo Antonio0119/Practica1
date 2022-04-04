@@ -49,7 +49,9 @@ class RegisterActivity : AppCompatActivity() {
                     if(auth.currentUser == null) {
                         auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener { task ->
+                                Log.d("user","Activity 1")
                                 if (task.isSuccessful) {
+                                    Log.d("user","Activity 2")
                                     registerViewModel.saveUserInServer(
                                         email = email,
                                         name = name,
@@ -57,11 +59,10 @@ class RegisterActivity : AppCompatActivity() {
                                         document = document.toDouble(),
                                         cel_number = number.toDouble()
                                     )
-                                    auth.signOut()
                                     onBackPressed()
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Log.d("Register", "createUserWithEmail:failure")
+                                    Log.d("user", "createUserWithEmail:failure")
                                     Toast.makeText(
                                         baseContext, task.exception?.message.toString(),
                                         Toast.LENGTH_SHORT

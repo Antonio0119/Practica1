@@ -23,7 +23,6 @@ class ServiceServerRepository {
         price: Int,
         urlPicture: String
     ) {
-
         val documentService = db.collection("services").document()
         val service = ServiceServer(
             id = documentService.id,
@@ -37,7 +36,8 @@ class ServiceServerRepository {
         )
         Log.d("User",auth.currentUser?.email.toString())
         db.collection("services").document(documentService.id).set(service).await()
-        db.collection("users").document(activeUser.toString()).collection("services").document(documentService.id).set(service).await()
+        Log.d("User",service.user_id.toString())
+        db.collection("users").document(service.user_id.toString()).collection("services").document(documentService.id).set(service).await()
 
     }
 

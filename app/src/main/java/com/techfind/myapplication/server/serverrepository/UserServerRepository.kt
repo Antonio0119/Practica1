@@ -18,8 +18,9 @@ class UserServerRepository {
         document: Double,
         cel_number: Double,
     ) {
+        Log.d("user","Server")
 
-        val documentUser = db.collection("users").document()
+        val documentUser = db.collection("users").document(auth.currentUser?.uid.toString())
         val user = User(
             uid = documentUser.id,
             name = name,
