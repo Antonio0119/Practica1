@@ -1,16 +1,17 @@
 package com.techfind.myapplication.ui.services
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.CardViewItemServiceBinding
-import com.techfind.myapplication.local.Add_service
+import com.techfind.myapplication.server.ServiceServer
 
 class ServicesAdapter(
 
-    private val servicesList: ArrayList<Add_service>
+    private val servicesList: ArrayList<ServiceServer>
 ) : RecyclerView.Adapter<ServicesAdapter.ServiceViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServiceViewHolder {
@@ -20,14 +21,15 @@ class ServicesAdapter(
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
+        Log.d("1",servicesList.toString())
         val service = servicesList[position]
         holder.bind(service)
     }
 
+
     override fun getItemCount(): Int = servicesList.size
 
-
-    fun appendItems(newList: ArrayList<Add_service>) {
+    fun appendItems(newList: ArrayList<ServiceServer>) {
         servicesList.clear()
         servicesList.addAll(newList)
         notifyDataSetChanged()
@@ -35,10 +37,12 @@ class ServicesAdapter(
 
     class ServiceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = CardViewItemServiceBinding.bind(itemView)
-        fun bind(service: Add_service) {
+        fun bind(service: ServiceServer) {
             with(binding){
-                categoryTextView.text = service.category
-                shortDescriptionTextView.text = service.short_description
+                categoryTextView.text = "Categoría: ".plus(service.category)
+                priceTextView.text = "Precio: $".plus(service.price.toString())
+                yearsTextView.text = "Años de experiencia: ".plus(service.experience.toString())
+                shortDescriptionTextView.text = "Descripción: ".plus(service.short_description)
             }
         }
     }

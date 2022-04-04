@@ -1,13 +1,13 @@
-package com.techfind.myapplication.ui.bottom.ui.home
+package com.techfind.myapplication.ui.calendar
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class CalendarViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "Agregar evento"
     }
     val text: LiveData<String> = _text
 }

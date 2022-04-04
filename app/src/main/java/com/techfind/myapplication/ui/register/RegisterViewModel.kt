@@ -1,17 +1,16 @@
 package com.techfind.myapplication.ui.register
 
-import android.content.Intent
 import android.util.Log
 import android.util.Patterns
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.techfind.myapplication.local.User
-import com.techfind.myapplication.repository.TechfindRepository
-import com.techfind.myapplication.ui.login.LoginActivity
-import java.sql.Types.NULL
+import com.techfind.myapplication.local.repository.TechfindRepository
+import com.techfind.myapplication.server.serverrepository.UserServerRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
 
 class RegisterViewModel: ViewModel() {
     private val msg: MutableLiveData<String> = MutableLiveData()
@@ -21,11 +20,11 @@ class RegisterViewModel: ViewModel() {
     private val userRepository = TechfindRepository()
 
 
-    fun emailValidation(email: String): Boolean {
+    private fun emailValidation(email: String): Boolean {
         return email.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    fun Validation(name: String, email: String, password: String, repeatPassword: String, document: String, number: String)
+    fun validation(name: String, email: String, password: String, repeatPassword: String, document: String, number: String)
     {
         status.value = 0
         if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()
@@ -37,42 +36,41 @@ class RegisterViewModel: ViewModel() {
 
                     // Si la validación es true se indica un registro exitoso
                     if (emailValidation(email)) {
-                        msg.value = "Registro exitoso"
-                        Log.d("myTag", "Reg ex");
+
                         status.value = 1
+                        msg.value = "Registro exitoso"
 
                     } else {
                         //Si el email es invalido
                         msg.value = "Email Inválido"
-                        Log.d("myTag", "Em inv");
                     }
                 } else {
                     //Si las contrasenas no son iguales
                     msg.value = "Las contraseñas no son iguales"
-                    Log.d("myTag", "cont no");
                 }
             } else {
                 // si la contrasena no tiene minimo 6 digitos
                 msg.value = "La contraseña debe tener mínimo 6 dígitos"
-                Log.d("myTag", "cont min");
             }
         } else {
             // si no digita todos los campos
             msg.value = "Debe digitar todos los campos"
-            Log.d("myTag","digita tod campos")
         }
     }
 
-    fun saveUser(
-        name: String,
-        email: String,
-        password: String,
-        document: Int,
-        number: Int,
-    ) {
-        userRepository.newUser(name,email,password,document,number)
-        Log.d("newuser",name)
+    fun saveUserInServer(name: String, email: String, password: String, document: Long, cel_number: Long) {
+        GlobalScope.launch(Dispatchers.IO) {
+            Log.d("user","ViewModel")
+            UserServerRepository().saveUser(
+                name = name,
+                email = email,
+                password = password,
+                document = document,
+                cel_number = cel_number)
+        }
+
     }
+
 
 }
 

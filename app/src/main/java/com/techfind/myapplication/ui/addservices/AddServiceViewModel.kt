@@ -3,7 +3,8 @@ package com.techfind.myapplication.ui.addservices
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.techfind.myapplication.repository.ServiceRepository
+import com.techfind.myapplication.local.repository.ServiceRepository
+import com.techfind.myapplication.server.serverrepository.ServiceServerRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,7 +22,9 @@ class AddServiceViewModel : ViewModel() {
     fun validateFields(category: String, long_description: String, short_description: String, service_price: String, years_experience: String) {
         if (category.isEmpty() || long_description.isEmpty() || short_description.isEmpty() || service_price.isEmpty() || years_experience.isEmpty()) {
             msg.value = "Debe ingresar todos los datos"
+            dataValidate.value = false
         } else {
+            msg.value = "Servicio registrado exitosamente"
             dataValidate.value = true
         }
     }
@@ -36,5 +39,12 @@ class AddServiceViewModel : ViewModel() {
         GlobalScope.launch(Dispatchers.IO) {
             serviceRepository.saveService(category,long_description,short_description,service_price,years_experience)
         }
+    }
+
+    fun saveServiceInServer(category: String,shortDescription: String,longDescription: String,yearsExperience: Int,servicePrice: Int, urlPicture: String) {
+        GlobalScope.launch(Dispatchers.IO) {
+            ServiceServerRepository().saveService(category,shortDescription,longDescription,yearsExperience,servicePrice,urlPicture)
+        }
+
     }
 }

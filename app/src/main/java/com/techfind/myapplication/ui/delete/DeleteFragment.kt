@@ -6,12 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.techfind.myapplication.R
 import com.techfind.myapplication.databinding.DeleteFragmentBinding
 import com.techfind.myapplication.local.Add_service
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.techfind.myapplication.server.ServiceServer
 import com.techfind.myapplication.ui.addservices.AddServiceFragmentDirections
 
 class DeleteFragment : Fragment() {
@@ -31,34 +35,56 @@ class DeleteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        deleteViewModel.findServiceDone.observe(viewLifecycleOwner, {result ->
-            onFindServiceDoneSubscribe(result)
-        })
+        val spinner: Spinner = deleteBinding.categorySpinner
+        var category = ""
+        val lista = resources.getStringArray(R.array.categories_array)
+        val adaptador = ArrayAdapter(this.requireContext(),android.R.layout.simple_spinner_item,lista)
+        spinner.adapter = adaptador
+
+        spinner.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                category = lista[position].toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                category = ""
+            }
+        }
+
+        deleteViewModel.findServiceServerDone.observe(viewLifecycleOwner) { result ->
+            onFindServiceServerDoneSubscribe(result)
+        }
 
         with(deleteBinding) {
             searchButton.setOnClickListener {
-                deleteViewModel.searchService(categoryEditText.text.toString())
+                deleteViewModel.searchService(category)
             }
         }
     }
 
-    private fun onFindServiceDoneSubscribe(service: Add_service?) {
+    private fun onFindServiceServerDoneSubscribe(service: ServiceServer?) {
         if (service == null) {
             Toast.makeText(requireContext(), "Servicio no encontrado", Toast.LENGTH_SHORT).show()
         } else {
             MaterialAlertDialogBuilder(requireContext())
-                .setTitle(resources.getString(R.string.warning_title))
-                .setMessage(resources.getString(R.string.delete_service_msg, service.category))
-                .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
+                .setTitle("Advertencia")
+                .setMessage("¿Desea eliminar el servicio "+service.category.toString())
+                .setNegativeButton("Cancelar") { dialog, which ->
                     // Respond to negative button press
                 }
                 .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
-                    deleteViewModel.deleteService(service)
-                    deleteBinding.categoryEditText.text?.clear()
+                    deleteViewModel.deleteServiceServer(service)
+                    Toast.makeText(requireContext(), "Servicio eliminado exitosamente", Toast.LENGTH_SHORT).show()
                 }
                 .show()
         }
-
     }
+
 
 }

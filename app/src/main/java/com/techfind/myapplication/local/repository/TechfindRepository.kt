@@ -1,4 +1,4 @@
-package com.techfind.myapplication.repository
+package com.techfind.myapplication.local.repository
 
 import com.techfind.myapplication.Techfind
 import com.techfind.myapplication.local.User
@@ -11,8 +11,8 @@ class TechfindRepository {
         name: String,
         email: String,
         password: String,
-        document: Int,
-        cel_number: Int
+        document: Long,
+        cel_number: Long
 
     ) {
         val user = User(

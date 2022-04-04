@@ -45,5 +45,7 @@
     <string name="accept">Aceptar</string>
     <string name="update">Actualizar</string>
     <string name="example_short_description">Más de 10 años de experiencia en el sector de la limpieza, estoy dispuesto a ofrecer mis servicios</string>
+    <string name="Paint">Pintura</string>
+    <string name="category_paint">Pintura</string>
 
 </resources>
