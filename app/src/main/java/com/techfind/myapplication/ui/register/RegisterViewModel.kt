@@ -58,7 +58,7 @@ class RegisterViewModel: ViewModel() {
         }
     }
 
-    fun saveUserInServer(name: String,email: String,password: String,document: Double,cel_number: Double) {
+    fun saveUserInServer(name: String, email: String, password: String, document: Long, cel_number: Long) {
         GlobalScope.launch(Dispatchers.IO) {
             Log.d("user","ViewModel")
             UserServerRepository().saveUser(
@@ -69,17 +69,6 @@ class RegisterViewModel: ViewModel() {
                 cel_number = cel_number)
         }
 
-    }
-
-    fun saveUser(
-        name: String,
-        email: String,
-        password: String,
-        document: Double,
-        number: Double,
-    ) {
-        userRepository.newUser(name,email,password,document,number)
-        Log.d("newuser",name)
     }
 
 

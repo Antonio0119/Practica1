@@ -11,8 +11,8 @@ class TechfindRepository {
         name: String,
         email: String,
         password: String,
-        document: Double,
-        cel_number: Double
+        document: Long,
+        cel_number: Long
 
     ) {
         val user = User(

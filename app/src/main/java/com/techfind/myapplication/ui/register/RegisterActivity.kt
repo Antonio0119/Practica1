@@ -56,8 +56,8 @@ class RegisterActivity : AppCompatActivity() {
                                         email = email,
                                         name = name,
                                         password = password,
-                                        document = document.toDouble(),
-                                        cel_number = number.toDouble()
+                                        document = document.toLong(),
+                                        cel_number = number.toLong()
                                     )
                                     onBackPressed()
                                 } else {

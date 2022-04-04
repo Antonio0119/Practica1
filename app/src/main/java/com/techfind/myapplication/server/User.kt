@@ -5,7 +5,7 @@ data class User(
     var name: String? = null,
     var email: String? = null,
     var password: String? = null,
-    var document: Double? = null,
-    var cel_number: Double? = null
+    var document: Long? = null,
+    var cel_number: Long? = null
 )
 

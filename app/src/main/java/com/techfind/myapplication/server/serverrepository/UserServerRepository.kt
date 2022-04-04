@@ -15,8 +15,8 @@ class UserServerRepository {
         name: String,
         email: String,
         password: String,
-        document: Double,
-        cel_number: Double,
+        document: Long,
+        cel_number: Long,
     ) {
         Log.d("user","Server")
 
