@@ -52,7 +52,7 @@
     <fragment
         android:id="@+id/categoriesListFragment"
         android:name="com.techfind.myapplication.ui.categorieslist.CategoriesListFragment"
-        android:label="categorieslist_fragment"
+        android:label="Categorías"
         tools:layout="@layout/categorieslist_fragment" >
         <argument
             android:name="category"
