@@ -12,7 +12,7 @@ data class User(
     @ColumnInfo(name = "name") var name: String = "",
     @ColumnInfo(name = "email") var email: String = "",
     @ColumnInfo(name = "password") var password: String = "",
-    @ColumnInfo(name = "document") var document: Int = 0,
-    @ColumnInfo(name = "cel_number") var cel_number: Int = 0,
+    @ColumnInfo(name = "document") var document: Double = 0.0,
+    @ColumnInfo(name = "cel_number") var cel_number: Double = 0.0,
 
-) : Serializable
+    ) : Serializable

@@ -15,8 +15,8 @@ class UserServerRepository {
         name: String,
         email: String,
         password: String,
-        document: Int,
-        cel_number: Int,
+        document: Double,
+        cel_number: Double,
     ) {
 
         val documentUser = db.collection("users").document()

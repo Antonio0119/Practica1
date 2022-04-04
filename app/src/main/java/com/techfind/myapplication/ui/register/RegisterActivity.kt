@@ -54,8 +54,8 @@ class RegisterActivity : AppCompatActivity() {
                                         email = email,
                                         name = name,
                                         password = password,
-                                        document = document.toInt(),
-                                        cel_number = number.toInt()
+                                        document = document.toDouble(),
+                                        cel_number = number.toDouble()
                                     )
                                     auth.signOut()
                                     onBackPressed()
