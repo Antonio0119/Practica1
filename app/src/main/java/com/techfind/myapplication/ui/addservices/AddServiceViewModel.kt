@@ -41,9 +41,9 @@ class AddServiceViewModel : ViewModel() {
         }
     }
 
-    fun saveServiceInServer(category: String,shortDescription: String,longDescription: String,yearsExperience: Int,servicePrice: Int) {
+    fun saveServiceInServer(category: String,shortDescription: String,longDescription: String,yearsExperience: Int,servicePrice: Int, urlPicture: String) {
         GlobalScope.launch(Dispatchers.IO) {
-            ServiceServerRepository().saveService(category,shortDescription,longDescription,yearsExperience,servicePrice)
+            ServiceServerRepository().saveService(category,shortDescription,longDescription,yearsExperience,servicePrice,urlPicture)
         }
 
     }
